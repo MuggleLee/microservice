@@ -1,4 +1,4 @@
-package com.hao.product.DAO;
+package com.hao.product.Service;
 
 import com.hao.product.Model.ProductInfo;
 import org.junit.Assert;
@@ -10,16 +10,20 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
+/**
+ * @author Muggle Lee
+ * @Date: 2019/1/3 15:42
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ProductInfoDAOTest {
+public class ProductInfoServiceTest {
 
     @Autowired
-    private ProductInfoDAO productInfoDAO;
+    private ProductInfoService productInfoService;
 
     @Test
-    public void findProductInfoByProductStatus() throws Exception{
-        List<ProductInfo> list = productInfoDAO.findByProductStatus(0);
-        Assert.assertTrue(list.size() >0);
+    public void findAllUp() {
+        List<ProductInfo> list =  productInfoService.findAllUp();
+        Assert.assertTrue(list.size() > 0);
     }
 }

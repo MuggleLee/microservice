@@ -1,5 +1,7 @@
 package com.hao.product.Model;
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,6 +14,7 @@ import java.util.Date;
 @Entity
 //@Table(name = "product_info")  如果类名与数据表对应可省略
 @Table(name = "product_info")
+@Data
 public class ProductInfo {
     @Id
     private String productId;
