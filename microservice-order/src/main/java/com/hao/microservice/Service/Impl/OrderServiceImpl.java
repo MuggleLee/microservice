@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -65,15 +66,17 @@ public class OrderServiceImpl implements OrderService {
 //                .map(e -> new DecreaseStockInput(e.getProductId(), e.getProductQuantity()))
 //                .collect(Collectors.toList());
 //        productClient.decreaseStock(decreaseStockInputList);
-//
-//        //订单入库
-//        OrderMaster orderMaster = new OrderMaster();
-//        orderDTO.setOrderId(orderId);
-//        BeanUtils.copyProperties(orderDTO, orderMaster);
-//        orderMaster.setOrderAmount(orderAmout);
-//        orderMaster.setOrderStatus(OrderStatusEnum.NEW.getCode());
-//        orderMaster.setPayStatus(PayStatusEnum.WAIT.getCode());
-//        orderMasterRepository.save(orderMaster);
+
+        //订单入库
+        OrderMaster orderMaster = new OrderMaster();
+        orderDTO.setOrderId(orderId);
+        BeanUtils.copyProperties(orderDTO, orderMaster);
+        orderMaster.setOrderAmount(new BigDecimal(5));
+        orderMaster.setOrderStatus(OrderStatusEnum.NEW.getCode());
+        orderMaster.setPayStatus(PayStatusEnum.WAIT.getCode());
+        orderMaster.setCreateTime(new Date());
+        orderMaster.setUpdateTime(new Date());
+        orderMasterDAO.save(orderMaster);
         return orderDTO;
     }
 }

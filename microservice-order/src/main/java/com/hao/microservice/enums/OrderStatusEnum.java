@@ -2,6 +2,10 @@ package com.hao.microservice.enums;
 
 import lombok.Getter;
 
+/**
+ * @author Muggle Lee
+ * @since 2019-01-04
+ */
 @Getter
 public enum OrderStatusEnum {
     NEW(0, "新订单"),
