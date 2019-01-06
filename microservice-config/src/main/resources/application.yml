@@ -8,8 +8,8 @@ spring:
           uri: https://github.com/MuggleLee/microservice-config
           username: MuggleLee
           password: 369874125lihao.
-          basedir: E:\microservice-config
+          basedir: /root/microservice-tem
 eureka:
   client:
     service-url:
-      defaultZone: http://47.107.104.181:8761/eureka
+      defaultZone: http://47.107.104.181:8086/eureka
