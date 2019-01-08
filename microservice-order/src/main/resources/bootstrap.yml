@@ -7,7 +7,14 @@ spring:
         enabled: true
         service-id: CONFIG
       profile: dev
+#  rabbitmq:
+#    host: 47.107.104.181
+#    port: 8084
+#    username: guest
+#    password: guest
 eureka:
   client:
     service-url:
       defaultZone: http://47.107.104.181:8086/eureka/
+server:
+  port: 8080
